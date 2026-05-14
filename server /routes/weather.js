@@ -1,11 +1,7 @@
-const express = require("express");
-const router = express.Router();
 const axios = require("axios");
 
-router.get("/", async (req, res) => {
+module.exports = async (req, res) => {
   try {
-
-    // Germantown, MD coordinates
     const lat = 39.1732;
     const lon = -77.2717;
 
@@ -20,15 +16,7 @@ router.get("/", async (req, res) => {
       windspeed: weather.windspeed,
       weathercode: weather.weathercode
     });
-
   } catch (err) {
-
-    console.error("Weather API error:", err.message);
-
-    res.status(500).json({
-      error: "Failed to fetch weather data"
-    });
+    res.status(500).json({ error: "Failed to fetch weather data" });
   }
-});
-
-module.exports = router;
+};

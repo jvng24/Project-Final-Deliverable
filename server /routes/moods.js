@@ -1,34 +1,31 @@
-const express = require("express");
-const router = express.Router();
-const supabase = require("../supabase");
+const supabase = require("../server/supabase");
 
-// GET all moods
-router.get("/", async (req, res) => {
-  const { data, error } = await supabase
-    .from("moods")
-    .select("*")
-    .order("created_at", { ascending: true });
+module.exports = async (req, res) => {
+  if (req.method === "GET") {
+    const { data, error } = await supabase
+      .from("moods")
+      .select("*")
+      .order("created_at", { ascending: true });
 
-  if (error) return res.status(500).json(error);
-  res.json(data);
-});
-
-// POST mood
-router.post("/", async (req, res) => {
-  const { mood, note, weather } = req.body;
-
-  // validation
-  if (mood < 1 || mood > 10) {
-    return res.status(400).json({ error: "Mood must be 1–10" });
+    if (error) return res.status(500).json(error);
+    return res.json(data);
   }
 
-  const { data, error } = await supabase
-    .from("moods")
-    .insert([{ mood, note, weather }])
-    .select();
+  if (req.method === "POST") {
+    const { mood, note, weather } = req.body;
 
-  if (error) return res.status(500).json(error);
-  res.json(data);
-});
+    if (mood < 1 || mood > 10) {
+      return res.status(400).json({ error: "Mood must be 1–10" });
+    }
 
-module.exports = router;
+    const { data, error } = await supabase
+      .from("moods")
+      .insert([{ mood, note, weather }])
+      .select();
+
+    if (error) return res.status(500).json(error);
+    return res.json(data);
+  }
+
+  res.status(405).json({ error: "Method not allowed" });
+};
