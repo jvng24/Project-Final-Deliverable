@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mood Dashboard</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="about.html">About</a>
+  <a href="help.html">Help</a>
+</nav>
+
+<h1>Mood Dashboard</h1>
+
+<!-- chart -->
+<div class="chart-container">
+  <canvas id="chart" data-aos="zoom-in"></canvas>
+</div>
+
+<!-- history -->
+<section class="history-section">
+  <h2>Mood History</h2>
+  <div id="moodList"></div>
+</section>
+
+<!-- scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  AOS.init();
+</script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

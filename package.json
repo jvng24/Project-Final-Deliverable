@@ -1,0 +1,31 @@
+{
+  "name": "project-final-deliverable",
+  "version": "1.0.0",
+  "description": "Final project for INST377 - Mood tracker app",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvng24/Project-Final-Deliverable.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jvng24/Project-Final-Deliverable/issues"
+  },
+  "homepage": "https://github.com/jvng24/Project-Final-Deliverable#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.4",
+    "axios": "^1.16.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}

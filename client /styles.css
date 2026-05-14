@@ -1,0 +1,229 @@
+/* global styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f7fb;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* navigation bar */
+
+nav {
+  display: flex;
+  gap: 18px;
+  padding: 15px 30px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4a90e2;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #2c6fbf;
+}
+
+/*headings*/
+
+/* text content spacing */
+
+p,
+ul,
+ol {
+  margin-left: 30px;
+  margin-right: 30px;
+  max-width: 700px;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 20px 30px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 25px 30px 10px;
+  color: #34495e;
+}
+
+/*card styles*/
+
+form,
+canvas,
+ul,
+ol {
+  background: white;
+  margin: 20px 30px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  max-width: 700px;
+}
+
+/* dashboard styles */
+
+.chart-container {
+  background: white;
+  margin: 20px 30px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  max-width: 700px;
+}
+
+.history-section {
+  margin: 20px 30px;
+  max-width: 700px;
+}
+
+/* form styles */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* button styles */
+
+button {
+  background: #4a90e2;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #357bd8;
+}
+
+/*mood history cards*/
+
+#moodList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/*individual mood card*/
+.mood-card {
+  background: white;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  transition: all 0.2s ease;
+}
+
+.mood-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/*top row*/
+.mood-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mood-score {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.mood-date {
+  font-size: 12px;
+  color: #777;
+}
+
+/* content */
+.mood-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* spacing for text inside fields */
+.mood-note span,
+.mood-weather span {
+  margin-left: 4px;
+}
+
+/* chart styles */
+
+canvas {
+  padding: 10px;
+  display: block;
+}
+
+/* list styles */
+
+ul,
+ol {
+  padding-left: 40px;
+}
+
+/* responsive design */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  form,
+  canvas,
+  ul,
+  ol,
+  .chart-container,
+  .history-section {
+    margin: 15px;
+    width: auto;
+  }
+
+  h1 {
+    margin: 15px;
+  }
+}

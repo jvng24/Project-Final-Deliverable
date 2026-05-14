@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>MoodTrack</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    </head>
+
+    <body>
+
+    <nav> 
+        <a href="home.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="help.html">Help</a>
+    </nav>
+
+    <h1 data-aos ="fade-up">Mood Tracker</h1>
+
+    <form id ="moodForm">
+        <label>Mood (1–10)</label>
+        <input id="mood" type="number" min="1" max="10" required>
+
+        <label>Note</label>
+        <textarea id="note"></textarea>
+
+        <button type="submit">Save Mood</button>
+    </form>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src = "js/home.js"></script>
+
+    </body>
+
+</html>
