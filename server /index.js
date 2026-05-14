@@ -12,16 +12,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// static frontend
+// serve frontend
 app.use(express.static(path.join(__dirname, "../client")));
 
-// routes
+// API routes
 app.use("/api/moods", moodRoutes);
 app.use("/api/weather", weatherRoutes);
 
-// homepage
+// homepage route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/home.html"));
 });
 
+// IMPORTANT: no app.listen here
 module.exports = app;
