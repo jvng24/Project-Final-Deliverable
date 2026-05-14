@@ -14,12 +14,14 @@ app.use(express.json());
 app.use("/api/moods", moodRoutes);
 app.use("/api/weather", weatherRoutes);
 
-// serve frontend
-app.use(express.static(path.join(__dirname, "../client")));
+// serve static frontend
+const clientPath = path.join(process.cwd(), "client");
+
+app.use(express.static(clientPath));
 
 // homepage
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/home.html"));
+  res.sendFile(path.join(clientPath, "home.html"));
 });
 
 module.exports = app;
