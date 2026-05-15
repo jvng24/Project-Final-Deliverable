@@ -24,9 +24,7 @@ MoodTrack
 
 
 ---Live Deployment---
-https://your-vercel-link.vercel.app 
-
-
+project-final-deliverable-mk2y.vercel.app 
 
 __________________________________________________ Developer Manual __________________________________________________ 
 
